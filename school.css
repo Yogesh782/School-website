@@ -1,0 +1,301 @@
+/* ========== Global ========== */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #222;
+  background-color: #fff;
+  line-height: 1.6;
+}
+
+/* ========== Navbar ========== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-brand img {
+  border-radius: 8px;
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.navbar-brand strong {
+  color: #000;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #ffc107 !important;
+  background-color: rgba(255, 193, 7, 0.15);
+  border-radius: 10px;
+}
+
+.navbar .btn {
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  background-color: #ffc107;
+  color: #000;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.navbar .btn:hover {
+  background-color: #ff9800;
+  color: #fff;
+}
+
+/* ========== Hero Section ========== */
+.hero {
+  background: url('https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+  min-height: 85vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero .overlay-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, rgba(0,0,0,0.65), rgba(0,0,0,0.4));
+  z-index: 1;
+}
+
+.hero .content-box {
+  position: relative;
+  z-index: 2;
+  padding: 60px 20px;
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  margin-bottom: 1.5rem;
+}
+
+/* Hero Buttons */
+.hero-buttons a {
+  display: inline-block;
+  margin: 8px;
+  padding: 10px 22px;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: 0.3s ease;
+  font-weight: 500;
+}
+
+.btn.primary {
+  background: #ffc107;
+  color: #000;
+}
+.btn.primary:hover {
+  background: #ff9800;
+  color: #fff;
+}
+.btn.secondary {
+  background: #fff;
+  color: #000;
+}
+.btn.secondary:hover {
+  background: #ddd;
+}
+
+/* Animation for title */
+@keyframes fadeInUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0px); opacity: 1; }
+}
+.animate-title {
+  animation: fadeInUp 1.2s ease-out;
+}
+
+/* ========== Marquee ========== */
+.marquee {
+  background: linear-gradient(90deg, #ff0040, #ff8000, #ffc400, #00ffcc);
+  background-size: 400% 400%;
+  animation: bgScroll 12s linear infinite;
+  color: white;
+  font-weight: bold;
+  padding: 12px 0;
+  font-size: 1.1rem;
+  text-align: center;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+}
+@keyframes bgScroll {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+.new-badge {
+  animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* ========== Gallery ========== */
+.gallery-modern-card {
+  height: 280px;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+.gallery-modern-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+}
+.gallery-modern-card .gallery-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.gallery-modern-card:hover .gallery-image {
+  transform: scale(1.05);
+}
+.overlay {
+  backdrop-filter: blur(4px);
+  transition: all 0.4s ease;
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  color: #fff;
+  padding: 12px;
+  font-size: 0.9rem;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* ========== About Section ========== */
+.about-section {
+  padding: 60px 20px;
+  scroll-margin-top: 100px;
+}
+.about-img img {
+  width: 100%;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+.about-img:hover img {
+  transform: scale(1.03);
+}
+.about-section h2 {
+  font-weight: 700;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  margin-bottom: 1rem;
+}
+.about-section p {
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
+  color: #555;
+  line-height: 1.6;
+}
+.about-section ul {
+  padding-left: 1.2rem;
+  margin-top: 1rem;
+}
+.about-section ul li {
+  margin-bottom: 8px;
+  color: #333;
+  font-size: 0.95rem;
+}
+.about-section .btn-primary {
+  background-color: #0048ff;
+  border: none;
+  font-size: 0.95rem;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+.about-section .btn-primary:hover {
+  background-color: #0033cc;
+  color: #fff;
+}
+
+/* ========== Footer ========== */
+.footer {
+  background-color: #222;
+  color: #fff;
+  padding: 30px 0;
+  font-size: 15px;
+  text-align: center;
+}
+.footer a {
+  color: #f8f9fa;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+  color: #ffc107;
+}
+
+
+/* Typing Keyframes */
+@keyframes typing { from { width: 0; } to { width: 100%; } }
+@keyframes typing2 { from { width: 0; } to { width: 100%; } }
+
+/* Glow */
+@keyframes glow {
+  from { text-shadow: 0 0 8px #00f7ff, 0 0 16px #00f7ff; }
+  to { text-shadow: 0 0 16px #00f7ff, 0 0 32px #00f7ff; }
+}
+@keyframes fadeOut { to { opacity: 0; visibility: hidden; pointer-events: none; } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* ========== Responsive Tweaks ========== */
+@media (max-width: 992px) {
+  .navbar-nav .nav-link { padding: 0.5rem; }
+}
+@media (max-width: 768px) {
+  .hero { min-height: 70vh; }
+  .gallery-modern-card { height: 220px; }
+  .about-section { padding: 40px 15px; }
+}
+@media (max-width: 576px) {
+  .hero { min-height: 60vh; }
+  .hero .content-box { padding: 30px 10px; }
+  .hero p { font-size: 0.9rem; }
+  .gallery-modern-card { height: 180px; }
+  .overlay { font-size: 0.8rem; padding: 8px; }
+  .typing-glow,
+  .typing-glow.delay {
+    white-space: normal;
+    border-right: none;
+    width: 100%;
+    animation: glow 1.5s ease-in-out infinite alternate;
+  }
+}
